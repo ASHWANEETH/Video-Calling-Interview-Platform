@@ -1,6 +1,6 @@
 import express from "express";
 import path from "path";
-import cors from cors;
+import cors from "cors";
 import { serve } from "inngest/express";
 import { inngest } from "./lib/inngest.js"
 
@@ -15,7 +15,7 @@ const __dirname = path.resolve();
 app.use(express.json())
 app.use(cors({origin: ENV.CLIENT_URL, credentials: true}))
 
-app.use("/api/inngest",serve({client:inngest,}))
+app.use("/api/inngest",serve({client:inngest,functions}))
 
 app.get("/health", (req, res) => {
   res.status(200).json({ msg: "Hey there! its working fine" });
