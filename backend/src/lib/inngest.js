@@ -1,6 +1,6 @@
-import { inngest } from "inngest";
-import { connectDB } from "./lib/db.js";
-import { User } from "./models/User.js";
+import { Inngest } from "inngest";
+import { connectDB } from "./db.js";
+import { User } from "../models/User.js";
 
 export const inngest = new Inngest({id:"vcip"});
 
@@ -25,7 +25,7 @@ const syncUser = inngest.createFunction(
 )
 
 const deleteUser = inngest.createFunction(
-  {id:"delete-userr"},
+  {id:"delete-user"},
   {event: "clerk/user.deleted"},
   async({event})=>{
 
