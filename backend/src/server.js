@@ -22,6 +22,7 @@ if (ENV.NODE_ENV == "prod") {
 
 const startServer = async () => {
   try {
+    if(!ENV.DB_URL){throw new Error("DB url not found!")}
     await connectDB();
     app.listen(ENV.PORT, () => {
       console.log(`Server running at port ${ENV.PORT}`);
