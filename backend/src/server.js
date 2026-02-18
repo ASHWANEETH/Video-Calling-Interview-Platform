@@ -36,10 +36,10 @@ const startServer = async () => {
     }
     await connectDB();
     app.listen(ENV.PORT, () => {
-      console.log(`Server running at port ${ENV.PORT}`);
+      console.log(`Server running at port ${ENV.PORT}\nyeah lets go!`);
     });
   } catch (error) {
-    console.error("Error strating server!", err);
+    console.error("Error strating server!", error);
   }
 };
 
