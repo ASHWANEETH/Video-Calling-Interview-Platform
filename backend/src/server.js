@@ -4,10 +4,9 @@ import cors from "cors";
 import { serve } from "inngest/express";
 import { inngest, functions } from "./lib/inngest.js";
 import { clerkMiddleware } from "@clerk/express";
-
 import { ENV } from "./lib/env.js";
 import { connectDB } from "./lib/db.js";
-import { protectRoute } from "./middlewares/protectRoute.js";
+import chatRoutes from "./routes/chatRoutes.js";
 
 const app = express();
 
@@ -19,14 +18,11 @@ app.use(cors({ origin: ENV.CLIENT_URL, credentials: true }));
 app.use(clerkMiddleware());
 
 app.use("/api/inngest", serve({ client: inngest, functions }));
+app.use("/api/chat", chatRoutes);
 
 app.get("/health", (req, res) => {
   res.status(200).json({ msg: "Hey there! its working fine" });
 });
-
-app.get("/test", protectRoute, (req,res)=> {
-  res.status(200).json({msg:"auth test"});
-})
 
 if (ENV.NODE_ENV == "prod") {
   app.use(express.static(path.join(__dirname, "../frontend/dist")));
