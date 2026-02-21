@@ -4,7 +4,7 @@ import { chatClient, streamClient } from "../lib/stream.js";
 export async function createSession(req, res) {
   try {
     const { problem, difficulty } = req.body;
-    const userId = req.user_id;
+    const userId = req.user._id;
     const clerkId = req.user.clerkId;
 
     if (!problem || !difficulty) {
@@ -94,14 +94,13 @@ export async function joinSession(req, res) {
     const userId = req.user._id;
     const clerkId = req.user.clerkId;
 
-    const session = await Session.findById(id);
-    if (!session) return res.status(400).json({ msg: "Session not found!" });
+    const session = await Session.findOneAndUpdate(
+      { _id: id, status: "active", participant: null, host: { $ne: userId } },
+      { $set: { participant: userId } },
+      { new: true },
+    );
 
-    if (session.participant)
-      return res.status(404).json({ msg: "Session is full" });
-
-    session.participant = userId;
-    await session.save();
+    if (!session) return res.status(409).json({ msg: "Session not available" });
 
     const channel = chatClient.channel("messaging", session.callId);
     await channel.addMembers([clerkId]);
