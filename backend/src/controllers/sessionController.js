@@ -79,7 +79,7 @@ export async function getSessionById(req, res) {
       .populate("host", "name profileImage email clerkId")
       .populate("participant", "name profileImage email clerkId");
 
-    if (!session) return res.status(400).json({ msg: "Session not found!" });
+    if (!session) return res.status(404).json({ msg: "Session not found!" });
 
     res.status(200).json(session);
   } catch (error) {
@@ -118,7 +118,7 @@ export async function endSession(req, res) {
     const userId = req.user._id;
 
     const session = await Session.findById(id);
-    if (!session) return res.status(400).json({ msg: "Session not found!" });
+    if (!session) return res.status(404).json({ msg: "Session not found!" });
 
     if (session.host.toString() != userId.toString()) {
       return res.status(403).json({ msg: "Only host can end session" });
