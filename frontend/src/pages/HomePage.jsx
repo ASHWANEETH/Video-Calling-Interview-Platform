@@ -4,9 +4,33 @@ import {
   ZapIcon,
   CircleCheckBigIcon,
   CodesandboxIcon,
+  VideoIcon,
+  Code2Icon,
+  UsersIcon,
 } from "lucide-react";
 import { SignInButton } from "@clerk/clerk-react";
 function HomePage() {
+  const features = [
+    {
+      title: "Live Code Editor",
+      description:
+        "Write, run, and debug code in real-time with syntax highlighting and instant feedback during interviews.",
+      icon: Code2Icon,
+    },
+    {
+      title: "HD Video Call",
+      description:
+        "High-quality video and audio communication for smooth and interactive technical interviews.",
+      icon: VideoIcon,
+    },
+    {
+      title: "Easy Collaboration",
+      description:
+        "Collaborate with interviewers in real-time through shared sessions, screen sharing, and live feedback.",
+      icon: UsersIcon,
+    },
+  ];
+
   return (
     <div className="bg-gradient-to-br from-base-100 via-base-200 to-base-300">
       {/* Navbar */}
@@ -28,7 +52,7 @@ function HomePage() {
           </Link>
 
           <SignInButton mode="modal">
-            <button className="group px-6 py-3 bg-gradient-to-r from-primary to-secondary rounded-xl text-white font-semibold text-sm shadow-lg hover:shadow-xl trasnsition-all duration-200 hover:scale-105 flex items-center gap-2">
+            <button className="group px-6 py-3 bg-gradient-to-r from-primary to-secondary rounded-xl text-white font-semibold text-sm shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 flex items-center gap-2">
               <span>Get Started</span>
               <ArrowRightIcon className="size-4 group-hover:translate-x-0.5 transition-transform" />
             </button>
@@ -77,7 +101,7 @@ function HomePage() {
 
             <div>
               <SignInButton mode="modal">
-                <button className="group px-6 py-3 bg-gradient-to-r from-accent to-primary rounded-xl text-white font-semibold text-sm shadow-lg hover:shadow-xl trasnsition-all duration-200 hover:scale-102 flex items-center gap-2">
+                <button className="group px-6 py-3 bg-gradient-to-r from-accent to-primary rounded-xl text-white font-semibold text-sm shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-102 flex items-center gap-2">
                   <span>Start Coding now</span>
                   <ArrowRightIcon className="size-4 group-hover:translate-x-0.5 transition-transform" />
                 </button>
@@ -92,6 +116,42 @@ function HomePage() {
             className="w-full h-auto p-10"
           />
         </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 py-10">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl mb-4">
+            Everything You need to{" "}
+            <span className="text-accent font-black font-mono">SUCCEED!</span>
+          </h2>
+          <p className="text-base-content/60">
+            Powerful features designed to make your coding interviews seamless
+            and productive.
+          </p>
+        </div>
+      </div>
+
+      {/* Features  */}
+      <div className="max-w-7xl mx-auto px-4 pb-10 grid md:grid-cols-3 gap-8 rounded-2xl">
+        {features.map((feature, index) => {
+          const Icon = feature.icon;
+
+          return (
+            <div key={index} className="card bg-base-100 shadow-xl">
+              <div className="card-body items-center text-center">
+                <div className="size-16 rounded-2xl bg-primary flex items-center justify-center mb-4">
+                  <Icon className="size-8" />
+                </div>
+
+                <h3 className="card-title">{feature.title}</h3>
+
+                <p className="text-xs text-base-content/60">
+                  {feature.description}
+                </p>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
