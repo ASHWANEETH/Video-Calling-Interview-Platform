@@ -7,7 +7,9 @@ import DashboardPage from "./pages/DashboardPage";
 import { Toaster } from "react-hot-toast";
 
 function App() {
-  const { isSignedIn } = useUser();
+  const { isSignedIn, isLoaded } = useUser();
+
+  if (!isLoaded) return null;
 
   return (
     <>
