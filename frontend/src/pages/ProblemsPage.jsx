@@ -1,8 +1,10 @@
-import React from 'react'
+import Navbar from "../components/Navbar"
 
 function ProblemsPage() {
   return (
-    <div>ProblemsPage</div>
+    <div>
+      <Navbar/>
+    </div>
   )
 }
 
