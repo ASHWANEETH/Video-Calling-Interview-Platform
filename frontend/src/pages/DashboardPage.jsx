@@ -1,6 +1,6 @@
 import Navbar from "../components/Navbar"
 
-function ProblemsPage() {
+function DashboardPage() {
   return (
     <div>
       <Navbar/>
@@ -8,4 +8,4 @@ function ProblemsPage() {
   )
 }
 
-export default ProblemsPage
+export default DashboardPage
