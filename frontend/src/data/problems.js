@@ -80,7 +80,9 @@ class Solution {
     category: "String • Two Pointers",
     description: {
       text: "Write a function that reverses a string. The input string is given as an array of characters s.",
-      notes: ["You must do this by modifying the input array in-place with O(1) extra memory."],
+      notes: [
+        "You must do this by modifying the input array in-place with O(1) extra memory.",
+      ],
     },
     examples: [
       {
@@ -152,7 +154,9 @@ class Solution {
     category: "String • Two Pointers",
     description: {
       text: "A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.",
-      notes: ["Given a string s, return true if it is a palindrome, or false otherwise."],
+      notes: [
+        "Given a string s, return true if it is a palindrome, or false otherwise.",
+      ],
     },
     examples: [
       {
@@ -172,7 +176,10 @@ class Solution {
           's is an empty string "" after removing non-alphanumeric characters. Since an empty string reads the same forward and backward, it is a palindrome.',
       },
     ],
-    constraints: ["1 ≤ s.length ≤ 2 * 10⁵", "s consists only of printable ASCII characters"],
+    constraints: [
+      "1 ≤ s.length ≤ 2 * 10⁵",
+      "s consists only of printable ASCII characters",
+    ],
     starterCode: {
       javascript: `function isPalindrome(s) {
   // Write your solution here
@@ -337,6 +344,448 @@ print(maxArea([1,1]))  # Expected: 1`,
       javascript: "49\n1",
       python: "49\n1",
       java: "49\n1",
+    },
+  },
+  // ================= EASY =================
+
+  "contains-duplicate": {
+    id: "contains-duplicate",
+    title: "Contains Duplicate",
+    difficulty: "Easy",
+    category: "Array • Hash Table",
+    description: {
+      text: "Given an integer array nums, return true if any value appears at least twice.",
+      notes: ["Return false if every element is distinct."],
+    },
+    examples: [
+      { input: "nums = [1,2,3,1]", output: "true" },
+      { input: "nums = [1,2,3,4]", output: "false" },
+    ],
+    constraints: ["1 ≤ nums.length ≤ 10⁵"],
+    starterCode: {
+      javascript: `function containsDuplicate(nums) {}`,
+      python: `def containsDuplicate(nums): pass`,
+      java: `class Solution { public boolean containsDuplicate(int[] nums) { return false; } }`,
+    },
+    expectedOutput: { javascript: "true", python: "True", java: "true" },
+  },
+
+  "merge-two-sorted-lists": {
+    id: "merge-two-sorted-lists",
+    title: "Merge Two Sorted Lists",
+    difficulty: "Easy",
+    category: "Linked List",
+    description: {
+      text: "Merge two sorted linked lists and return it as a sorted list.",
+      notes: [],
+    },
+    examples: [{ input: "l1=[1,2,4], l2=[1,3,4]", output: "[1,1,2,3,4,4]" }],
+    constraints: ["0 ≤ list size ≤ 50"],
+    starterCode: {
+      javascript: `function mergeTwoLists(l1,l2){}`,
+      python: `def mergeTwoLists(l1,l2): pass`,
+      java: `class Solution {}`,
+    },
+    expectedOutput: {
+      javascript: "[1,1,2,3,4,4]",
+      python: "[1,1,2,3,4,4]",
+      java: "[1,1,2,3,4,4]",
+    },
+  },
+
+  "best-time-buy-sell-stock": {
+    id: "best-time-buy-sell-stock",
+    title: "Best Time to Buy and Sell Stock",
+    difficulty: "Easy",
+    category: "Array • Greedy",
+    description: {
+      text: "Find the maximum profit from buying and selling a stock once.",
+      notes: [],
+    },
+    examples: [{ input: "prices=[7,1,5,3,6,4]", output: "5" }],
+    constraints: ["1 ≤ prices.length ≤ 10⁵"],
+    starterCode: {
+      javascript: `function maxProfit(prices){}`,
+      python: `def maxProfit(prices): pass`,
+      java: `class Solution {}`,
+    },
+    expectedOutput: { javascript: "5", python: "5", java: "5" },
+  },
+
+  "valid-anagram": {
+    id: "valid-anagram",
+    title: "Valid Anagram",
+    difficulty: "Easy",
+    category: "String • Hash Table",
+    description: {
+      text: "Return true if t is an anagram of s.",
+      notes: [],
+    },
+    examples: [{ input: 's="anagram", t="nagaram"', output: "true" }],
+    constraints: ["1 ≤ s.length ≤ 5 * 10⁴"],
+    starterCode: {
+      javascript: `function isAnagram(s,t){}`,
+      python: `def isAnagram(s,t): pass`,
+      java: `class Solution {}`,
+    },
+    expectedOutput: { javascript: "true", python: "True", java: "true" },
+  },
+
+  "climbing-stairs": {
+    id: "climbing-stairs",
+    title: "Climbing Stairs",
+    difficulty: "Easy",
+    category: "Dynamic Programming",
+    description: {
+      text: "You can climb 1 or 2 steps. Find total ways to reach n steps.",
+      notes: [],
+    },
+    examples: [{ input: "n=3", output: "3" }],
+    constraints: ["1 ≤ n ≤ 45"],
+    starterCode: {
+      javascript: `function climbStairs(n){}`,
+      python: `def climbStairs(n): pass`,
+      java: `class Solution {}`,
+    },
+    expectedOutput: { javascript: "3", python: "3", java: "3" },
+  },
+
+  // ================= STRING =================
+
+  "longest-common-prefix": {
+    id: "longest-common-prefix",
+    title: "Longest Common Prefix",
+    difficulty: "Easy",
+    category: "String",
+    description: {
+      text: "Find the longest common prefix among strings.",
+      notes: [],
+    },
+    examples: [{ input: '["flower","flow","flight"]', output: '"fl"' }],
+    constraints: ["1 ≤ strs.length ≤ 200"],
+    starterCode: {
+      javascript: `function longestCommonPrefix(strs){}`,
+      python: `def longestCommonPrefix(strs): pass`,
+      java: `class Solution {}`,
+    },
+    expectedOutput: { javascript: "fl", python: "fl", java: "fl" },
+  },
+
+  "length-of-last-word": {
+    id: "length-of-last-word",
+    title: "Length of Last Word",
+    difficulty: "Easy",
+    category: "String",
+    description: {
+      text: "Return length of the last word in a string.",
+      notes: [],
+    },
+    examples: [{ input: '"Hello World"', output: "5" }],
+    constraints: ["1 ≤ s.length ≤ 10⁴"],
+    starterCode: {
+      javascript: `function lengthOfLastWord(s){}`,
+      python: `def lengthOfLastWord(s): pass`,
+      java: `class Solution {}`,
+    },
+    expectedOutput: { javascript: "5", python: "5", java: "5" },
+  },
+
+  // ================= MEDIUM =================
+
+  "3sum": {
+    id: "3sum",
+    title: "3Sum",
+    difficulty: "Medium",
+    category: "Array • Two Pointers",
+    description: {
+      text: "Find all unique triplets that sum to zero.",
+      notes: [],
+    },
+    examples: [
+      { input: "nums=[-1,0,1,2,-1,-4]", output: "[[-1,-1,1],[-1,0,1]]" },
+    ],
+    constraints: ["3 ≤ nums.length ≤ 3000"],
+    starterCode: {
+      javascript: `function threeSum(nums){}`,
+      python: `def threeSum(nums): pass`,
+      java: `class Solution {}`,
+    },
+    expectedOutput: {
+      javascript: "[[-1,-1,1],[-1,0,1]]",
+      python: "[[-1,-1,1],[-1,0,1]]",
+      java: "[[-1,-1,1],[-1,0,1]]",
+    },
+  },
+
+  "product-of-array-except-self": {
+    id: "product-of-array-except-self",
+    title: "Product of Array Except Self",
+    difficulty: "Medium",
+    category: "Array • Prefix Sum",
+    description: {
+      text: "Return array where each element is product of others.",
+      notes: ["Solve without division."],
+    },
+    examples: [{ input: "nums=[1,2,3,4]", output: "[24,12,8,6]" }],
+    constraints: ["2 ≤ nums.length ≤ 10⁵"],
+    starterCode: {
+      javascript: `function productExceptSelf(nums){}`,
+      python: `def productExceptSelf(nums): pass`,
+      java: `class Solution {}`,
+    },
+    expectedOutput: {
+      javascript: "[24,12,8,6]",
+      python: "[24,12,8,6]",
+      java: "[24,12,8,6]",
+    },
+  },
+
+  "find-minimum-rotated-array": {
+    id: "find-minimum-rotated-array",
+    title: "Find Minimum in Rotated Sorted Array",
+    difficulty: "Medium",
+    category: "Binary Search",
+    description: {
+      text: "Find minimum element in rotated sorted array.",
+      notes: [],
+    },
+    examples: [{ input: "nums=[3,4,5,1,2]", output: "1" }],
+    constraints: ["1 ≤ nums.length ≤ 5000"],
+    starterCode: {
+      javascript: `function findMin(nums){}`,
+      python: `def findMin(nums): pass`,
+      java: `class Solution {}`,
+    },
+    expectedOutput: { javascript: "1", python: "1", java: "1" },
+  },
+
+  "search-in-rotated-array": {
+    id: "search-in-rotated-array",
+    title: "Search in Rotated Sorted Array",
+    difficulty: "Medium",
+    category: "Binary Search",
+    description: {
+      text: "Search target in rotated sorted array.",
+      notes: [],
+    },
+    examples: [{ input: "nums=[4,5,6,7,0,1,2], target=0", output: "4" }],
+    constraints: ["1 ≤ nums.length ≤ 5000"],
+    starterCode: {
+      javascript: `function search(nums,target){}`,
+      python: `def search(nums,target): pass`,
+      java: `class Solution {}`,
+    },
+    expectedOutput: { javascript: "4", python: "4", java: "4" },
+  },
+
+  "longest-substring-without-repeating": {
+    id: "longest-substring-without-repeating",
+    title: "Longest Substring Without Repeating Characters",
+    difficulty: "Medium",
+    category: "Sliding Window",
+    description: {
+      text: "Find length of longest substring without repeating characters.",
+      notes: [],
+    },
+    examples: [{ input: '"abcabcbb"', output: "3" }],
+    constraints: ["0 ≤ s.length ≤ 5 * 10⁴"],
+    starterCode: {
+      javascript: `function lengthOfLongestSubstring(s){}`,
+      python: `def lengthOfLongestSubstring(s): pass`,
+      java: `class Solution {}`,
+    },
+    expectedOutput: { javascript: "3", python: "3", java: "3" },
+  },
+
+  "set-matrix-zeroes": {
+    id: "set-matrix-zeroes",
+    title: "Set Matrix Zeroes",
+    difficulty: "Medium",
+    category: "Matrix",
+    description: {
+      text: "Set row and column to zero if element is zero.",
+      notes: [],
+    },
+    examples: [
+      {
+        input: "[[1,1,1],[1,0,1],[1,1,1]]",
+        output: "[[1,0,1],[0,0,0],[1,0,1]]",
+      },
+    ],
+    constraints: ["m,n ≤ 200"],
+    starterCode: {
+      javascript: `function setZeroes(matrix){}`,
+      python: `def setZeroes(matrix): pass`,
+      java: `class Solution {}`,
+    },
+    expectedOutput: {
+      javascript: "matrix updated",
+      python: "matrix updated",
+      java: "matrix updated",
+    },
+  },
+
+  "rotate-image": {
+    id: "rotate-image",
+    title: "Rotate Image",
+    difficulty: "Medium",
+    category: "Matrix",
+    description: {
+      text: "Rotate n×n matrix 90 degrees clockwise in-place.",
+      notes: [],
+    },
+    examples: [{ input: "[[1,2],[3,4]]", output: "[[3,1],[4,2]]" }],
+    constraints: ["1 ≤ n ≤ 20"],
+    starterCode: {
+      javascript: `function rotate(matrix){}`,
+      python: `def rotate(matrix): pass`,
+      java: `class Solution {}`,
+    },
+    expectedOutput: {
+      javascript: "matrix rotated",
+      python: "matrix rotated",
+      java: "matrix rotated",
+    },
+  },
+
+  "coin-change": {
+    id: "coin-change",
+    title: "Coin Change",
+    difficulty: "Medium",
+    category: "Dynamic Programming",
+    description: {
+      text: "Return minimum coins to make amount.",
+      notes: [],
+    },
+    examples: [{ input: "coins=[1,2,5], amount=11", output: "3" }],
+    constraints: ["1 ≤ amount ≤ 10⁴"],
+    starterCode: {
+      javascript: `function coinChange(coins,amount){}`,
+      python: `def coinChange(coins,amount): pass`,
+      java: `class Solution {}`,
+    },
+    expectedOutput: { javascript: "3", python: "3", java: "3" },
+  },
+
+  "word-break": {
+    id: "word-break",
+    title: "Word Break",
+    difficulty: "Medium",
+    category: "Dynamic Programming",
+    description: {
+      text: "Check if string can be segmented using dictionary words.",
+      notes: [],
+    },
+    examples: [{ input: 's="leetcode", dict=["leet","code"]', output: "true" }],
+    constraints: ["1 ≤ s.length ≤ 300"],
+    starterCode: {
+      javascript: `function wordBreak(s,wordDict){}`,
+      python: `def wordBreak(s,wordDict): pass`,
+      java: `class Solution {}`,
+    },
+    expectedOutput: { javascript: "true", python: "True", java: "true" },
+  },
+
+  "number-of-islands": {
+    id: "number-of-islands",
+    title: "Number of Islands",
+    difficulty: "Medium",
+    category: "Graph • DFS",
+    description: {
+      text: "Count number of islands in grid.",
+      notes: [],
+    },
+    examples: [{ input: "grid with islands", output: "1" }],
+    constraints: ["m,n ≤ 300"],
+    starterCode: {
+      javascript: `function numIslands(grid){}`,
+      python: `def numIslands(grid): pass`,
+      java: `class Solution {}`,
+    },
+    expectedOutput: { javascript: "1", python: "1", java: "1" },
+  },
+
+  "course-schedule": {
+    id: "course-schedule",
+    title: "Course Schedule",
+    difficulty: "Medium",
+    category: "Graph • Topological Sort",
+    description: {
+      text: "Check if you can finish all courses.",
+      notes: [],
+    },
+    examples: [
+      { input: "numCourses=2, prerequisites=[[1,0]]", output: "true" },
+    ],
+    constraints: ["1 ≤ numCourses ≤ 2000"],
+    starterCode: {
+      javascript: `function canFinish(numCourses,prerequisites){}`,
+      python: `def canFinish(numCourses,prerequisites): pass`,
+      java: `class Solution {}`,
+    },
+    expectedOutput: { javascript: "true", python: "True", java: "true" },
+  },
+
+  "top-k-frequent-elements": {
+    id: "top-k-frequent-elements",
+    title: "Top K Frequent Elements",
+    difficulty: "Medium",
+    category: "Heap • Hash Table",
+    description: {
+      text: "Return k most frequent elements.",
+      notes: [],
+    },
+    examples: [{ input: "nums=[1,1,1,2,2,3], k=2", output: "[1,2]" }],
+    constraints: ["1 ≤ nums.length ≤ 10⁵"],
+    starterCode: {
+      javascript: `function topKFrequent(nums,k){}`,
+      python: `def topKFrequent(nums,k): pass`,
+      java: `class Solution {}`,
+    },
+    expectedOutput: { javascript: "[1,2]", python: "[1,2]", java: "[1,2]" },
+  },
+
+  "decode-ways": {
+    id: "decode-ways",
+    title: "Decode Ways",
+    difficulty: "Medium",
+    category: "Dynamic Programming",
+    description: {
+      text: "Return number of ways to decode digit string.",
+      notes: [],
+    },
+    examples: [{ input: '"12"', output: "2" }],
+    constraints: ["1 ≤ s.length ≤ 100"],
+    starterCode: {
+      javascript: `function numDecodings(s){}`,
+      python: `def numDecodings(s): pass`,
+      java: `class Solution {}`,
+    },
+    expectedOutput: { javascript: "2", python: "2", java: "2" },
+  },
+
+  "daily-temperatures": {
+    id: "daily-temperatures",
+    title: "Daily Temperatures",
+    difficulty: "Medium",
+    category: "Stack",
+    description: {
+      text: "Return days to wait for warmer temperature.",
+      notes: [],
+    },
+    examples: [
+      { input: "[73,74,75,71,69,72,76,73]", output: "[1,1,4,2,1,1,0,0]" },
+    ],
+    constraints: ["1 ≤ temperatures.length ≤ 10⁵"],
+    starterCode: {
+      javascript: `function dailyTemperatures(t){}`,
+      python: `def dailyTemperatures(t): pass`,
+      java: `class Solution {}`,
+    },
+    expectedOutput: {
+      javascript: "[1,1,4,2,1,1,0,0]",
+      python: "[1,1,4,2,1,1,0,0]",
+      java: "[1,1,4,2,1,1,0,0]",
     },
   },
 };
